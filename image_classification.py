@@ -28,7 +28,9 @@ for layer in base_model.layers:
 
 img_dir = '../ML_Models/images/'
 
-image_datagen = ImageDataGenerator()
+image_datagen = ImageDataGenerator(
+	rescale=1./255
+)
 
 image_generator = image_datagen.flow_from_directory(
 	img_dir,
@@ -36,4 +38,10 @@ image_generator = image_datagen.flow_from_directory(
 	class_mode = 'binary'
 )
 
-print(next(image_generator))
+x, y = next(image_generator)
+
+print('-----------')
+print('x')
+print(x.shape)
+print('y')
+print(y.shape)
