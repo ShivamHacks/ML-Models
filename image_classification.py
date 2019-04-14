@@ -3,7 +3,7 @@
 To download images:
 
 mkdir class_name
-googleimagesdownload --keywords "query" --limit 100 --output_directory /home/sagrawa2/ML/images/class_name --nodirectory
+googleimagesdownload --keywords "starbucks cup" --limit 100 --output_directory /home/sagrawa2/ML/ML_Models/images/class_name --nodirectory
 
 """
 
