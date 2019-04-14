@@ -31,7 +31,7 @@ img_dir = '../ML_Models/images/'
 image_datagen = ImageDataGenerator()
 
 image_generator = image_datagen.flow_from_directory(
-	'images',
+	img_dir,
 	classes = None,
 	class_mode = 'binary'
 )
