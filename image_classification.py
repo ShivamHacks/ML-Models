@@ -11,7 +11,7 @@ googleimagesdownload --keywords "starbucks cup" --limit 100 --output_directory /
 
 
 from keras.applications.inception_v3 import InceptionV3
-from keras.preprocessing import image
+from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Model
 from keras.layers import Dense, GlobalAveragePooling2D
 from keras import backend as K
