@@ -26,6 +26,8 @@ model = Model(inputs=base_model.input, outputs=predictions)
 for layer in base_model.layers:
 	layer.trainable = False
 
+model.compile(optimizer='rmsprop', loss='binary_crossentropy')
+
 img_dir = '../ML_Models/images/'
 
 image_datagen = ImageDataGenerator(
