@@ -28,6 +28,8 @@ for layer in base_model.layers:
 
 img_dir = '../ML_Models/images/starbucks cup'
 
+image_datagen = ImageDataGenerator()
+
 image_generator = image_datagen.flow_from_directory(
 	'images',
 	classes = None,
