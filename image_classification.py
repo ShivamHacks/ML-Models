@@ -26,9 +26,11 @@ model = Model(inputs=base_model.input, outputs=predictions)
 for layer in base_model.layers:
 	layer.trainable = False
 
+img_dir = '../ML_Models/images/starbucks cup'
+
 image_generator = image_datagen.flow_from_directory(
 	'images',
-	classes = None
+	classes = None,
 	class_mode = 'binary'
 )
 
