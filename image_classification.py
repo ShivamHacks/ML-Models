@@ -26,7 +26,7 @@ model = Model(inputs=base_model.input, outputs=predictions)
 for layer in base_model.layers:
 	layer.trainable = False
 
-img_dir = '../ML_Models/images/starbucks cup'
+img_dir = '../ML_Models/images/'
 
 image_datagen = ImageDataGenerator()
 
