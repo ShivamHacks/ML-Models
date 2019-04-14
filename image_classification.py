@@ -16,7 +16,6 @@ from keras.models import Model
 from keras.layers import Dense, GlobalAveragePooling2D
 from keras import backend as K
 
-"""
 base_model = InceptionV3(weights='imagenet', include_top=False)
 x = base_model.output
 x = GlobalAveragePooling2D()(x)
@@ -26,8 +25,6 @@ model = Model(inputs=base_model.input, outputs=predictions)
 
 for layer in base_model.layers:
 	layer.trainable = False
-
-"""
 
 img_dir = '../ML_Models/images/'
 
@@ -42,10 +39,10 @@ image_generator = image_datagen.flow_from_directory(
 	batch_size = 8
 )
 
-x, y = next(image_generator)
+model.fit_generator(
+	image_generator,
+	steps_per_epoch=99,
+	epochs=5
+)
 
-print('-----------')
-print('x')
-print(x.shape)
-print('y')
-print(y.shape)
+model.save_weights("model.h5")
