@@ -32,14 +32,14 @@ for layer in base_model.layers:
 img_dir = '../ML_Models/images/'
 
 image_datagen = ImageDataGenerator(
-	rescale=1./255,
-	batch_size=8
+	rescale=1./255
 )
 
 image_generator = image_datagen.flow_from_directory(
 	img_dir,
 	classes = None,
-	class_mode = 'binary'
+	class_mode = 'binary',
+	batch_size = 8
 )
 
 x, y = next(image_generator)
